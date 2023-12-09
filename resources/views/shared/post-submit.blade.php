@@ -1,9 +1,17 @@
 <h4>Share yours ideas</h4>
+
 <div class="row">
-    <div class="mb-3">
-        <textarea class="form-control" id="idea" rows="3"></textarea>
-    </div>
-    <div class="">
-        <button class="btn btn-dark">Share</button>
-    </div>
+    <form action="{{ route('post.create') }}" method="post">
+        @csrf
+        @error('content')
+            <span class="fs-6 text-danger py-2">{{ $message }}</span>
+        @enderror
+        <div class="mb-3 mt-2">
+            <textarea class="form-control" placeholder="...." id="idea" name="content" rows="3" required></textarea>
+        </div>
+
+        <div class="">
+            <button type="submit" class="btn btn-sm btn-dark">Share</button>
+        </div>
+    </form>
 </div>
