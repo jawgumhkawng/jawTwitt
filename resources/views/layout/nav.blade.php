@@ -13,7 +13,7 @@
                     <a class="nav-link active" aria-current="page" href="login.html">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="register.html">Register</a>
+                    <a class="nav-link" href="/register">Register</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="profile.html">Profile</a>
