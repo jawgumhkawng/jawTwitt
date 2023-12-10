@@ -26,11 +26,11 @@
                     </div>
                 @empty
                     <div class="py-3">
-                        <h6>There is no post, yet!</h6>
+                        <h6 class="text-center">There is no post, yet!</h6>
                     </div>
                 @endforelse
                 <div class="mt-3">
-                    {{ $posts->links() }}
+                    {{ $posts->withQueryString()->links() }}
                 </div>
             </div>
             <div class="col-12 col-lg-3">

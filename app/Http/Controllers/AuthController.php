@@ -20,13 +20,13 @@ class AuthController extends Controller
 
             "name" => "required|min:5|max:40",
             "email" => "required|email|unique:users,email",
-            "password" => ['required', Password::min(8)
+            "password" => ["required", Password::min(8)
                 ->letters()
                 ->mixedCase()
                 ->numbers()
                 ->symbols()
                 ->uncompromised()],
-            'password_confirmation' => 'required|same:password'
+            "password_confirmation" => "required|same:password"
         ]);
 
         User::create([
@@ -36,5 +36,43 @@ class AuthController extends Controller
         ]);
 
         return redirect()->route('dashboard')->with("success", "Account Created successfully!");
+    }
+
+    public function login()
+    {
+        return view("auth.login");
+    }
+
+    public function authenticate()
+    {
+        $validated = request()->validate([
+
+
+            "email" => "required|email",
+            "password" => "required|min:8",
+
+        ]);
+
+
+        if (auth()->attempt($validated)) {
+
+            request()->session()->regenerate();
+
+            return redirect()->route("dashboard")->with("success", "Login Success !");
+        }
+
+        return redirect()->route("login")->withErrors([
+            "error" => "No Matching User Found With Provided Email And Password !"
+        ]);
+    }
+
+    public function logout()
+    {
+        auth()->logout();
+
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+
+        return redirect()->route('dashboard')->with("delete", "User Logout !");
     }
 }

@@ -22,6 +22,8 @@ class PostController extends Controller
             ]
         );
 
+        $validated['user_id'] = auth()->id();
+
         Post::create($validated);
 
         return redirect(route('dashboard'))->with('success', 'Post Create Successfully !');

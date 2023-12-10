@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark ticky-top bg-body-tertiary"
-    data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark bg-body-tertiary" data-bs-theme="dark"
+    style="position: sticky; top:0px; z-index:1">
     <div class="container">
         <a class="navbar-brand fw-light" href="/"><span class="fas fa-brain me-1">
             </span>{{ config('app.name') }}</a>
@@ -9,15 +9,30 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="login.html">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.html">Profile</a>
-                </li>
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::segment(1) == 'login' ? 'active' : '' }}" aria-current="page"
+                            href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::segment(1) == 'register' ? 'active' : '' }}"
+                            href="/register">Register</a>
+                    </li>
+                @endguest
+
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::segment(1) == 'profile' ? 'active' : '' }}"
+                            href="/profile">{{ auth()->user()->name }}</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button type="submit" class="btn btn-sm btn-danger ">Logout</button>
+                        </form>
+                    </li>
+                @endauth
+
             </ul>
         </div>
     </div>

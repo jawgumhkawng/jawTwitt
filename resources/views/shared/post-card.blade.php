@@ -5,7 +5,7 @@
                 <img style="width: 50px" class="me-2 avatar-sm rounded-circle"
                     src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt="Mario Avatar" />
                 <div>
-                    <h5 class="card-title mb-0"><a href="#"> Mario </a></h5>
+                    <h5 class="card-title mb-0"><a href="#"> {{ $post->user->name }}</a></h5>
                 </div>
             </div>
             <div>
@@ -15,13 +15,17 @@
 
                     @if (Request::segment(1) == 'post')
                         <a href="/" class="px-3 {{ Request::segment(3) == 'edit' ? 'd-none' : '' }}">back</a>
-                        <a href="{{ route('post.edit', $post) }}"
-                            class="{{ Request::segment(3) == 'edit' ? 'd-none' : '' }}">edit</a>
+                        @can('post-delete', $post)
+                            <a href="{{ route('post.edit', $post) }}"
+                                class="{{ Request::segment(3) == 'edit' ? 'd-none' : '' }}">edit</a>
+                        @endcan
                     @else
                         <a href="{{ route('post.show', $post) }}" class="">view</a>
                     @endif
-                    <button class="ms-3 btn btn-danger btn-sm p-0 px-2"
-                        onclick="return confirm('Are you sure, you want to DELETE this post?')">x</button>
+                    @can('post-delete', $post)
+                        <button class="ms-3 btn btn-danger btn-sm p-0 px-2"
+                            onclick="return confirm('Are you sure, you want to DELETE this post?')">x</button>
+                    @endcan
                 </form>
             </div>
         </div>
