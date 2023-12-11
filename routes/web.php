@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,27 +20,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::post('/post', [PostController::class, 'store'])->name('post.create');
+// Route::post('/posts', [PostController::class, 'store'])->name('posts.create');
 
-Route::delete('/post/{post}', [PostController::class, 'destroy'])->name('post.delete');
+// Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.delete');
 
-Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
+// Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
-Route::get('/post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
+// Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
 
-Route::put('/post/{post}/update', [PostController::class, 'update'])->name('post.update');
+// Route::put('/posts/{post}/update', [PostController::class, 'update'])->name('posts.update');
 
-Route::post('/post/{post}/comment', [CommentController::class, 'store'])->name('post.store.comment');
+Route::resource('posts', PostController::class)->middleware('auth');
 
-Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::resource('posts', PostController::class)->only('show');
 
-Route::post('/register', [AuthController::class, 'store']);
+Route::resource('posts.comments', CommentController::class)->only('store');
 
-Route::get('/login', [AuthController::class, 'login'])->name('login');
-
-Route::post('/login', [AuthController::class, 'authenticate']);
-
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::resource('user', UserController::class)->only('show', 'edit', 'update')->middleware('auth');
 
 Route::get('/terms', function () {
     return view('/terms');

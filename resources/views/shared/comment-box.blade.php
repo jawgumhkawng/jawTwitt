@@ -1,5 +1,5 @@
 <div>
-    <form action="{{ route('post.store.comment', $post) }}" method="post">
+    <form action="{{ route('posts.comments.store', $post) }}" method="post">
         @csrf
         <div class="mb-3">
             <textarea name="content" class="fs-6 form-control" rows="1" required></textarea>
@@ -10,8 +10,7 @@
 
     </form>
 
-    <hr />
-
+    {{-- <hr />
     @forelse ($post->comments as $comment)
         <div class="d-flex align-items-start">
             <img style="width: 35px" class="me-2 avatar-sm rounded-circle"
@@ -32,5 +31,5 @@
         <div class="my-3">
             <h4>There is no comment, yet!</h4>
         </div>
-    @endforelse
+    @endforelse --}}
 </div>

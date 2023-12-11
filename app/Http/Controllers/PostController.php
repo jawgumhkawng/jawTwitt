@@ -12,7 +12,7 @@ class PostController extends Controller
 
         return view("post.detail", compact("post"));
     }
-    public function store()
+    public function create()
     {
 
         $validated = request()->validate(
@@ -60,6 +60,6 @@ class PostController extends Controller
 
         $post->update($validated);
 
-        return redirect()->route('post.show', $post)->with('success', 'Post Updated Successfully !');
+        return redirect()->route('posts.show', $post)->with('success', 'Post Updated Successfully !');
     }
 }

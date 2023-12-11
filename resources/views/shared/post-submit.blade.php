@@ -2,7 +2,7 @@
     <h4>Share yours ideas</h4>
 
     <div class="row">
-        <form action="{{ route('post.create') }}" method="post">
+        <form action="{{ route('posts.create') }}" method="get">
             @csrf
             @error('content')
                 <span class="fs-6 text-danger py-2">{{ $message }}</span>

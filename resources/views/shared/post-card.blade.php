@@ -9,18 +9,18 @@
                 </div>
             </div>
             <div>
-                <form action="{{ route('post.delete', $post) }}" method="post">
+                <form action="{{ route('posts.destroy', $post) }}" method="post">
                     @csrf
                     @method('delete')
 
-                    @if (Request::segment(1) == 'post')
+                    @if (Request::segment(1) == 'posts')
                         <a href="/" class="px-3 {{ Request::segment(3) == 'edit' ? 'd-none' : '' }}">back</a>
                         @can('post-delete', $post)
-                            <a href="{{ route('post.edit', $post) }}"
+                            <a href="{{ route('posts.edit', $post) }}"
                                 class="{{ Request::segment(3) == 'edit' ? 'd-none' : '' }}">edit</a>
                         @endcan
                     @else
-                        <a href="{{ route('post.show', $post) }}" class="">view</a>
+                        <a href="{{ route('posts.show', $post) }}" class="">view</a>
                     @endif
                     @can('post-delete', $post)
                         <button class="ms-3 btn btn-danger btn-sm p-0 px-2"
@@ -32,7 +32,7 @@
     </div>
     <div class="card-body">
         @if ($editing ?? false)
-            <form action="{{ route('post.update', $post) }}" method="post">
+            <form action="{{ route('posts.update', $post) }}" method="post">
                 @csrf
                 @method('put')
                 @error('content')
@@ -44,7 +44,7 @@
 
                 <div class="">
                     <button type="submit" class="btn btn-dark btn-sm me-3">Update</button>
-                    <a href="{{ route('post.show', $post) }}">back</a>
+                    <a href="{{ route('posts.show', $post) }}">back</a>
                 </div>
             </form>
         @else
