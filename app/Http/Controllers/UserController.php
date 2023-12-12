@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -47,15 +49,41 @@ class UserController extends Controller
     {
         $post = $user->post()->latest()->paginate(3);
         $editing = true;
-        return view('user.show', compact('user', 'editing', 'post'));
+        return view('user.edit', compact('user', 'editing', 'post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(User $user)
     {
-        //
+        $validated = request()->validate(
+            [
+                'name' => 'required|min:5|max:40',
+                'bio' => 'nullable|min:1|max:255',
+                'image' => 'image',
+
+            ]
+        );
+
+        if (request()->has('image')) {
+
+            $imagePath = request()->file('image')->store('profile', 'public');
+            $validated['image'] = $imagePath;
+
+            if ($user->image) {
+                Storage::disk('public')->delete($user->image);
+            }
+        }
+
+        $user->update($validated);
+
+        return redirect()->route('profile');
+    }
+
+    public function profile()
+    {
+        return $this->show(auth()->user());
     }
 
     /**

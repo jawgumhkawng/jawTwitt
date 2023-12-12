@@ -22,6 +22,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'bio',
+        'image',
         'password',
     ];
 
@@ -53,5 +55,14 @@ class User extends Authenticatable
     public function comment()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function getImageURL()
+    {
+        if ($this->image) {
+            return url('storage/' . $this->image);
+        }
+
+        return url('storage/profile/fake-profile.jpg');
     }
 }

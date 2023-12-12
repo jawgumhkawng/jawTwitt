@@ -12,18 +12,18 @@
                 @guest
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) == 'login' ? 'active' : '' }}" aria-current="page"
-                            href="/login">Login</a>
+                            href="{{ route('login') }}">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) == 'register' ? 'active' : '' }}"
-                            href="/register">Register</a>
+                            href="{{ route('register') }}">Register</a>
                     </li>
                 @endguest
 
                 @auth
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) == 'profile' ? 'active' : '' }}"
-                            href="/profile">{{ auth()->user()->name }}</a>
+                            href="{{ route('profile') }}">{{ auth()->user()->name }}</a>
                     </li>
                     <li class="nav-item ms-2">
                         <form action="{{ route('logout') }}" method="post">

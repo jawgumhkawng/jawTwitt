@@ -2,10 +2,11 @@
     <div class="px-3 pt-4 pb-2">
         <div class="d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
-                <img style="width: 50px" class="me-2 avatar-sm rounded-circle"
-                    src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt="Mario Avatar" />
+                <img style="width: 40px;height:40px; border:1px solid grey" class="me-2 avatar-sm rounded-circle  shadow"
+                    src="{{ $post->user->getImageURL() }}" alt="Mario Avatar" />
                 <div>
-                    <h5 class="card-title mb-0"><a href="#"> {{ $post->user->name }}</a></h5>
+                    <h5 class="card-title mb-0"><a href="{{ route('user.show', $post->user->id) }}">
+                            {{ $post->user->name }}</a></h5>
                 </div>
             </div>
             <div>
