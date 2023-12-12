@@ -57,6 +57,21 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
+
+    public function following()
+    {
+        return $this->belongsToMany(User::class, 'follower_user', 'follower_id', 'user_id')->withTimestamps();
+    }
+
+    public function follower()
+    {
+        return $this->belongsToMany(User::class, 'follower_user', 'user_id', 'follower_id')->withTimestamps();
+    }
+
+    public function follow(User $user)
+    {
+        return $this->following()->where('user_id',  $user->id)->exists();
+    }
     public function getImageURL()
     {
         if ($this->image) {

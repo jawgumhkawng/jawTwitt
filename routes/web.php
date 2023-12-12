@@ -1,11 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,11 @@ Route::resource('posts.comments', CommentController::class)->only('store');
 Route::resource('user', UserController::class)->only('show', 'edit', 'update')->middleware('auth');
 
 Route::get('profile', [UserController::class, 'profile'])->name('profile')->middleware('auth');
+
+Route::post('user/{user}/follow', [FollowerController::class, 'follow'])->name('user.follow')->middleware('auth');
+
+Route::post('user/{user}/unfollow', [FollowerController::class, 'unfollow'])->name('user.unfollow')->middleware('auth');
+
 
 Route::get('/terms', function () {
     return view('/terms');
