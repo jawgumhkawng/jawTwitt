@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
+use App\Mail\TwittEmail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
 {
+    public function index()
+    {
+        return redirect()->route('dashboard');
+    }
     public function show(Post $post)
     {
 
@@ -24,13 +31,15 @@ class PostController extends Controller
 
         $validated['user_id'] = auth()->id();
 
-        Post::create($validated);
+        $post = Post::create($validated);
+
 
         return redirect(route('dashboard'))->with('success', 'Post Create Successfully !');
     }
 
     public function destroy(Post $post)
     {
+        $this->authorize('delete', $post);
 
         $post->delete();
 
@@ -42,6 +51,8 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
+        $this->authorize('update', $post);
+
         $editing = true;
 
         return view("post.detail", compact("post", "editing"));
@@ -50,6 +61,7 @@ class PostController extends Controller
     public function update(Post $post)
     {
 
+        $this->authorize('update', $post);
 
         $validated = request()->validate(
             [

@@ -53,10 +53,13 @@
                 {{ $post->content }}
             </p>
             <div class="d-flex justify-content-between">
-                <div>
-                    <a href="#" class="fw-light nav-link fs-6">
-                        <span class="fas fa-heart me-1"> </span>
-                        {{ $post->likes }}
+
+                <div class="d-flex">
+                    @include('post.shared.like-button')
+
+                    <a href="{{ route('login') }}" class="fw-light nav-link fs-6 mx-2">
+                        <span class="fas fa-comment "></span>
+                        {{ $post->comments_count }}
                     </a>
                 </div>
                 <div>

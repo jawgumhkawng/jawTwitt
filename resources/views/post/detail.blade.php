@@ -71,10 +71,14 @@
                                     {{ $post->content }}
                                 </p>
                                 <div class="d-flex justify-content-between">
-                                    <div>
+                                    <div class="d-flex">
                                         <a href="#" class="fw-light nav-link fs-6">
-                                            <span class="fas fa-heart me-1"> </span>
-                                            {{ $post->likes }}
+                                            <span class="fas fa-heart text-danger me-1"> </span>
+                                            {{ $post->like()->count() }}
+                                        </a>
+                                        <a href="#" class="fw-light nav-link fs-6 mx-2">
+                                            <span class="fas fa-comment "></span>
+                                            {{ $post->comments()->count() }}
                                         </a>
                                     </div>
                                     <div>
@@ -106,17 +110,29 @@
                                             <img style="width: 35px" class="me-2 avatar-sm rounded-circle"
                                                 src="{{ $comment->user->getImageURL() }}" alt="Luigi Avatar" />
                                             <div class="w-100">
-                                                <div class="d-flex justify-content-between">
+                                                <div class="d-flex justify-content-between mt-2">
                                                     <h6 class="">{{ $comment->user->name }}</h6>
                                                     <small class="fs-6 fw-light text-muted">
                                                         {{ $comment->created_at->diffForHumans() }}
                                                     </small>
                                                 </div>
+                                                {{-- <div class="d-flex align-items-center justify-content-between"> --}}
+
                                                 <p class="fs-6 mt-3 fw-light">
                                                     - {{ $comment->content }}
                                                 </p>
+                                                {{-- <form action="{{ url('posts/comments/delete', $comment, $post) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        @method('delete') --}}
+                                                {{-- <button class="ms-3 btn  btn-danger btn-sm p-0 px-1 "
+                                                            onclick="return confirm('Are you sure, you want to DELETE this post?')">x</button> --}}
+                                                {{-- </form> --}}
+                                                {{-- </div> --}}
                                             </div>
+
                                         </div>
+
                                     @empty
                                         <div class="my-3">
                                             <h4>There is no comment, yet!</h4>

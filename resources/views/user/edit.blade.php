@@ -19,7 +19,7 @@
                 @forelse($post as $post)
                     <div class="mt-3">
 
-                        @include('shared.post-card')
+                        @include('post.shared.post-card')
 
                     </div>
                 @empty

@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('follower_user', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('follower_id')->constrained('user')->cascadeOnDelete();
-            $table->timestamps();
+        Schema::table('posts', function (Blueprint $table) {
+            $table->dropColumn('likes');
         });
     }
 
@@ -23,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('follower_user');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->unsignedInteger('likes')->default('0');
+        });
     }
 };

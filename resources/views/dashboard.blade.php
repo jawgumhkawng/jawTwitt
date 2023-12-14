@@ -14,14 +14,14 @@
 
                 @include('shared.error-message')
 
-                @include('shared.post-submit')
+                @include('post.shared.post-submit')
 
                 <hr />
 
                 @forelse($posts as $post)
                     <div class="mt-3">
 
-                        @include('shared.post-card')
+                        @include('post.shared.post-card')
 
                     </div>
                 @empty

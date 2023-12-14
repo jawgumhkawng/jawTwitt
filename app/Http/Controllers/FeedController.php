@@ -4,15 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\Paginator;
 
-class DashboardController extends Controller
+class FeedController extends Controller
 {
-    public function index()
+    /**
+     * Handle the incoming request.
+     */
+    public function __invoke(Request $request)
     {
+        // $user = auth()->user();
 
+        $followerId = auth()->user()->following()->pluck('user_id');
 
-        $posts = Post::withCount(['like', 'comments'])->latest();
+        $posts = Post::whereIn('user_id', $followerId)->latest();
 
         if (request()->has("search")) {
             $posts = $posts->where("content", "like", "%" . request()->get('search') . "%");

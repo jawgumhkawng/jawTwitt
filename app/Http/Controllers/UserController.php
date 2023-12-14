@@ -47,6 +47,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        $this->authorize('update', $user);
+
         $post = $user->post()->latest()->paginate(3);
         $editing = true;
         return view('user.edit', compact('user', 'editing', 'post'));
@@ -57,6 +59,8 @@ class UserController extends Controller
      */
     public function update(User $user)
     {
+        $this->authorize('update', $user);
+
         $validated = request()->validate(
             [
                 'name' => 'required|min:5|max:40',
@@ -78,7 +82,7 @@ class UserController extends Controller
 
         $user->update($validated);
 
-        return redirect()->route('profile');
+        return redirect()->route('profile')->with('success', 'Profile Updated Success !');
     }
 
     public function profile()

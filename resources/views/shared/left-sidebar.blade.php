@@ -2,16 +2,22 @@
     <div class="card-body pt-3">
         <ul class="nav nav-link-secondary flex-column fw-bold gap-2">
             <li class="nav-item">
-                <a class="nav-link text-dark" href="/"> <span>Home</span></a>
+                <a class="nav-link {{ Route::is('dashboard') ? 'text-white bg-primary rounded-1' : '' }}"
+                    href="{{ route('dashboard') }}"> <span>Home</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"> <span>Explore</span></a>
+                <a class="nav-link {{ Request::segment(1) == 'posts' ? 'text-white bg-primary rounded-1' : '' }}"
+                    href="#">
+                    <span>Explore</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"> <span>Feed</span></a>
+                <a class="nav-link {{ Route::is('feed') ? 'text-white bg-primary rounded-1' : '' }}"
+                    href="{{ route('feed') }}"> <span>Feed</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/terms"> <span>Terms</span></a>
+                <a class="nav-link {{ Route::is('terms') ? 'text-white bg-primary rounded-1' : '' }}"
+                    href="{{ route('terms') }}">
+                    <span>Terms</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"> <span>Support</span></a>
@@ -22,6 +28,7 @@
         </ul>
     </div>
     <div class="card-footer text-center py-2">
-        <a class="btn btn-link btn-sm" href="#">View Profile </a>
+        <a class="btn btn-link  {{ Route::is('profile') ? 'text-white bg-primary rounded-1' : '' }}"
+            href="{{ route('user.show', auth()->user()->id ?? '') }}">View Profile </a>
     </div>
 </div>

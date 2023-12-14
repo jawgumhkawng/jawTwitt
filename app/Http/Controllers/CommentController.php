@@ -23,4 +23,16 @@ class CommentController extends Controller
 
         return redirect()->route('posts.show',  $post->id)->with('success', 'Comment Created Successfully !');
     }
+
+    // public function delete(Comment $comment, $post)
+    // {
+        // $this->authorize('delete', $comment);
+        // $comments = Comment::find($comment);
+        // $comments->delete();
+
+        // $post =  Post::findOrFail($id);
+        // $post->delete();
+
+    //     return redirect()->route('posts.show',  $post->id)->with('delete', 'Post Delete Successfully !');
+    // }
 }

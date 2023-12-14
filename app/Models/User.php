@@ -72,6 +72,16 @@ class User extends Authenticatable
     {
         return $this->following()->where('user_id',  $user->id)->exists();
     }
+
+    public function like()
+    {
+        return $this->belongsToMany(Post::class, 'post_likes')->withTimestamps();
+    }
+
+    public function post_liked(Post $post)
+    {
+        return $this->like()->where('post_id',  $post->id)->exists();
+    }
     public function getImageURL()
     {
         if ($this->image) {
