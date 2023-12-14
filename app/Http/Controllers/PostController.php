@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreatePostRequest;
+use App\Http\Requests\EditPostRequest;
 use App\Models\Post;
 use App\Models\User;
 use App\Mail\TwittEmail;
@@ -19,15 +21,10 @@ class PostController extends Controller
 
         return view("post.detail", compact("post"));
     }
-    public function create()
+    public function create(CreatePostRequest $request)
     {
 
-        $validated = request()->validate(
-            [
-                'content' => 'required|min:5|max:255',
-
-            ]
-        );
+        $validated = $request->validated();
 
         $validated['user_id'] = auth()->id();
 
@@ -58,17 +55,12 @@ class PostController extends Controller
         return view("post.detail", compact("post", "editing"));
     }
 
-    public function update(Post $post)
+    public function update(EditPostRequest $request, Post $post)
     {
 
         $this->authorize('update', $post);
 
-        $validated = request()->validate(
-            [
-                'content' => 'required|min:5|max:255',
-
-            ]
-        );
+        $validated = $request->validated();
 
         $post->update($validated);
 
