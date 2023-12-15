@@ -23,6 +23,13 @@ use App\Http\Controllers\LikeController;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
+Route::get('lang/{lang}', function ($lang) {
+
+    app()->setLocale($lang);
+    session()->put('locale', $lang);
+
+    return redirect()->route('dashboard');
+})->name('lang');
 
 // Route::post('/posts', [PostController::class, 'store'])->name('posts.create');
 

@@ -1,7 +1,7 @@
 @auth
     <div class="card mt-3" style="position: sticky; top:245px;">
         <div class="card-header pb-0 border-0">
-            <h5 class="">Who to follow</h5>
+            <h5 class="">{{ __('post.wtfollow') }}</h5>
         </div>
 
         <div class="card-body">

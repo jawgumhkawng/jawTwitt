@@ -12,11 +12,11 @@
                 @guest
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) == 'login' ? 'active' : '' }}" aria-current="page"
-                            href="{{ route('login') }}">Login</a>
+                            href="{{ route('login') }}">{{ __('post.login') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) == 'register' ? 'active' : '' }}"
-                            href="{{ route('register') }}">Register</a>
+                            href="{{ route('register') }}">{{ __('post.register') }}</a>
                     </li>
                 @endguest
 

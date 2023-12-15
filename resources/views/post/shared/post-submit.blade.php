@@ -1,5 +1,5 @@
 @auth
-    <h4>Share yours ideas</h4>
+    <h4>{{ __('post.share_ideas') }}</h4>
 
     <div class="row">
         <form action="{{ route('posts.create') }}" method="get">
@@ -12,7 +12,7 @@
             </div>
 
             <div class="">
-                <button type="submit" class="btn btn-sm btn-dark">Share</button>
+                <button type="submit" class="btn btn-sm btn-dark">{{ __('post.share') }}</button>
             </div>
         </form>
     </div>
@@ -20,6 +20,6 @@
 
 @guest
 
-    <h4 class="my-3">Share yours ideas for <span class="text-danger">Login!</span></h4>
+    <h4 class="my-3">{{ __('post.login_to_share') }}<span class="text-danger">{{ __('post.login') }}!</span></h4>
 
 @endguest

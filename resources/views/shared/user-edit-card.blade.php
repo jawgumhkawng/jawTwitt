@@ -26,7 +26,7 @@
                 @auth
                     @if (auth()->id() === $user->id)
                         <div class="">
-                            <a href="{{ route('user.show', $user->id) }}" class="">View</a>
+                            <a href="{{ route('user.show', $user->id) }}" class="">{{ __('post.view') }}</a>
                         </div>
                     @endif
                 @endauth
@@ -41,7 +41,7 @@
             </div>
 
             <div class="px-2 mt-4">
-                <h5 class="fs-5"> Bio : </h5>
+                <h5 class="fs-5"> {{ __('post.bio') }} : </h5>
 
                 <div class="mb-3">
                     <textarea type="text" name="bio" class="form-control" id="">{{ $user->bio }}</textarea>

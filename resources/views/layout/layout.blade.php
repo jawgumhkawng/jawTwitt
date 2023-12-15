@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>{{ config('app.name') }}</title>
+    <title>{{ config('app.name') }} | @yield('title')</title>
 
     <link href="https://bootswatch.com/5/sketchy/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
@@ -21,7 +21,8 @@
     @yield('content')
 
     <div class="">
-        <h6 class="text-muted text-center">Copy right all right reserved</h6>
+        <h6 class="text-muted text-center">Copy right <span class="fw-bold text-danger">2023</span> all right reserved
+            by <span class="fw-bold text-danger">Mrjaw</span>.</h6>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">

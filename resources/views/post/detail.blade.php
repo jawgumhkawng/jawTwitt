@@ -1,5 +1,7 @@
 @extends('layout.layout')
 
+@section('title', 'View Post')
+
 @section('content')
     <div class="container py-4">
         <div class="row">
@@ -33,13 +35,14 @@
 
                                         @if (Request::segment(1) == 'posts')
                                             <a href="/"
-                                                class="px-3 {{ Request::segment(3) == 'edit' ? 'd-none' : '' }}">back</a>
+                                                class="px-3 {{ Request::segment(3) == 'edit' ? 'd-none' : '' }}">{{ __('post.back') }}</a>
                                             @can('post-delete', $post)
                                                 <a href="{{ route('posts.edit', $post) }}"
-                                                    class="{{ Request::segment(3) == 'edit' ? 'd-none' : '' }}">edit</a>
+                                                    class="{{ Request::segment(3) == 'edit' ? 'd-none' : '' }}">{{ __('post.edit') }}</a>
                                             @endcan
                                         @else
-                                            <a href="{{ route('posts.show', $post) }}" class="">view</a>
+                                            <a href="{{ route('posts.show', $post) }}"
+                                                class="">{{ __('post.view') }}</a>
                                         @endif
                                         @can('post-delete', $post)
                                             <button class="ms-3 btn btn-danger btn-sm p-0 px-2"
@@ -62,8 +65,9 @@
                                     </div>
 
                                     <div class="">
-                                        <button type="submit" class="btn btn-dark btn-sm me-3">Update</button>
-                                        <a href="{{ route('posts.show', $post) }}">back</a>
+                                        <button type="submit"
+                                            class="btn btn-dark btn-sm me-3">{{ __('post.update') }}</button>
+                                        <a href="{{ route('posts.show', $post) }}">{{ _('post.back') }}</a>
                                     </div>
                                 </form>
                             @else
@@ -99,7 +103,8 @@
                                             <textarea name="content" class="fs-6 form-control" rows="1" required></textarea>
                                         </div>
                                         <div>
-                                            <button type="submit" class="btn btn-primary btn-sm">Post Comment</button>
+                                            <button type="submit"
+                                                class="btn btn-primary btn-sm">{{ __('post.comment') }}</button>
                                         </div>
 
                                     </form>

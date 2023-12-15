@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'login_to_share' => 'あなたのアイデアを共有してください',
+    'share_ideas' => 'あなたのアイデアを共有する.',
+    'login' => 'ログイン',
+    'register' => '登録する',
+    'search' => '捜索',
+    'view' => '眺める',
+    'edit' => '編集',
+    'back' => '戻る',
+    'Back' => '戻る',
+    'update' => '更新',
+    'comment' => 'コメント',
+    'bio' => 'バイオ',
+    'home' => '家',
+    'explore' => '探る',
+    'feed' => '飼料',
+    'terms' => '条件',
+    'viewprofile' => 'プロフィールを表示',
+    'wtfollow' => 'フォローする対象',
+    'follow' => '従う',
+    'unfollow' => 'フォロー解除',
+    'follower' => '取り巻き',
+    'share' => '共有',
+];
