@@ -1,4 +1,25 @@
-##jawTwitt##
+*This app is built using **laravel 10**,**Bootstrap5**
+
+## Twitter Clone
+
+## You can create post,comment and search.
+
+Twittwe Clone website using laravel with customize authentication and authorisation. This Twitter Clone website contains blog CRUD , search , like , comment section and customize user profile.
+
+## A rough Showcase Of My jawTwitt Website
+<h4>Index Page :</h4> <br>
+<img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/index.png" width="800px" height="470px">
+
+<br>
+
+<h4>Index Page (login) :</h4> <br>
+<img src="https://github.com/jawgumhkawng/Laravel_Blogs_App/blob/main/public/images/index(login).png" width="800px" height="470px">
+<img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/index(login-1).png" width="800px" height="470px">
+<br>
+
+<h4>Profile :</h4> <br>
+<img src="https://github.com/jawgumhkawng/Laravel_Blogs_App/blob/main/public/images/profile.png" width="800px" height="470px">
+<br>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
