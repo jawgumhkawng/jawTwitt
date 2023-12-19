@@ -13,14 +13,21 @@ Twittwe Clone website using laravel with customize authentication and authorisat
 <br>
 
 <h4>Index Page (login) :</h4> <br>
-<img src="https://github.com/jawgumhkawng/Laravel_Blogs_App/blob/main/public/images/index(login).png" width="800px" height="470px">
-<img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/index(login-1).png" width="800px" height="470px">
+<img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/index(login).png" width="800px" height="470px">
+<img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/index(ogin-1).png" width="800px" height="470px">
 <br>
 
 <h4>Profile :</h4> <br>
-<img src="https://github.com/jawgumhkawng/Laravel_Blogs_App/blob/main/public/images/profile.png" width="800px" height="470px">
+<img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/profile.png" width="800px" height="470px">
 <br>
 
+<h4>Detail  :</h4> <br>
+<img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/detail.png" width="800px" height="470px">
+<br>
+
+<h4>Language :</h4> <br>
+<img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/language.png" width="800px" height="470px">
+<br>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
