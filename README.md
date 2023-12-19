@@ -2,7 +2,7 @@
 
 ## Twitter Clone
 
-## You can create post,comment and search.
+## You can create post,like,comment and search.
 
 Twittwe Clone website using laravel with customize authentication and authorisation. This Twitter Clone website contains blog CRUD , search , like , comment section and customize user profile.
 
