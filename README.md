@@ -11,7 +11,9 @@ Twittwe Clone website using laravel with customize authentication and authorisat
 <img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/index.png" width="800px" height="470px">
 
 <br>
-
+<h4>Who Follow : </h4> <br>
+<img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/follow.png" width="800px" height="470px">
+<br>
 <h4>Index Page (login) :</h4> <br>
 <img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/index(login).png" width="800px" height="470px">
 <img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/index(ogin-1).png" width="800px" height="470px">
@@ -24,8 +26,7 @@ Twittwe Clone website using laravel with customize authentication and authorisat
 <h4>Detail  :</h4> <br>
 <img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/detail.png" width="800px" height="470px">
 <br>
-<h4>Who Follow : </h4> <br>
-<img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/follow.png" width="800px" height="470px">
+
 <br>
 <h4>Language :</h4> <br>
 <img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/language.png" width="800px" height="470px">
