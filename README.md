@@ -4,7 +4,7 @@
 
 ## You can create post,like,comment and search.
 
-Twittwe Clone website using laravel with customize authentication and authorisation. This Twitter Clone website contains blog CRUD , search , like , comment section and customize user profile.
+Twittwe Clone website using laravel with customize authentication and authorisation. This Twitter Clone website contains blog CRUD , search , follow , like , comment section and customize user profile.
 
 ## A rough Showcase Of My jawTwitt Website
 <h4>Index Page :</h4> <br>
@@ -24,7 +24,9 @@ Twittwe Clone website using laravel with customize authentication and authorisat
 <h4>Detail  :</h4> <br>
 <img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/detail.png" width="800px" height="470px">
 <br>
-
+<h4>Who Follow : </h4> <br>
+<img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/follow.png" width="800px" height="470px">
+<br>
 <h4>Language :</h4> <br>
 <img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/language.png" width="800px" height="470px">
 <br>
