@@ -8,7 +8,7 @@ Twittwe Clone website using laravel with customize authentication and authorisat
 
 ## A rough Showcase Of My jawTwitt Website
 <h4>Index Page :</h4> <br>
-<img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/index.png" width="800px" height="470px">
+<img src="https://github.com/jawgumhkawng/jawTwitt/blob/main/public/images/index.png" width="900px" height="470px">
 
 <br>
 <h4>Who Follow : </h4> <br>
