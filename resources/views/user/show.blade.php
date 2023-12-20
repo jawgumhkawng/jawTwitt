@@ -34,8 +34,10 @@
 
             </div>
             <div class="col-12 col-lg-3">
-                @include('shared.search-bar')
-                @include('shared.follow-box')
+                <div class="" style="position: sticky; top:65px; ">
+                    @include('shared.search-bar')
+                    @include('shared.follow-box')
+                </div>
             </div>
         </div>
     </div>

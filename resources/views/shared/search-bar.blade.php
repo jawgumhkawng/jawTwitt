@@ -1,4 +1,4 @@
-<div class="card" style="position: sticky; top:65px; ">
+<div class="card">
     <div class="card-header pb-0 border-0">
         <h5 class="">{{ __('post.search') }}</h5>
     </div>
