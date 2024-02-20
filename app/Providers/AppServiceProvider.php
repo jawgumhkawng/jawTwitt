@@ -27,6 +27,6 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrapFive();
 
-        View::share('topUsers', User::withcount('post')->orderBy('post_count', 'desc')->limit(3)->get());
+        View::share('topUsers', User::withcount('post')->orderBy('post_count', 'asc')->limit(3)->get());
     }
 }

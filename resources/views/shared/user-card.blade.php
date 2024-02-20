@@ -3,8 +3,8 @@
         <div class="d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
 
-                <img style="width:150px; border:2px solid grey" class="me-3 avatar-sm rounded-circle  shadow"
-                    src="{{ $user->getImageURL() }}" alt="Mario Avatar">
+                <img style="width:150px; height:150px; border:2px solid grey"
+                    class="me-3 avatar-sm rounded-circle  shadow" src="{{ $user->getImageURL() }}" alt="Mario Avatar">
 
                 <div>
 

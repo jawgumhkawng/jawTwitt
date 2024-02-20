@@ -112,7 +112,7 @@
                                     <hr />
                                     @forelse ($post->comments as $comment)
                                         <div class="d-flex align-items-start">
-                                            <img style="width: 35px" class="me-2 avatar-sm rounded-circle"
+                                            <img style="width: 35px; height: 35px" class="me-2 avatar-sm rounded-circle"
                                                 src="{{ $comment->user->getImageURL() }}" alt="Luigi Avatar" />
                                             <div class="w-100">
                                                 <div class="d-flex justify-content-between mt-2">

@@ -88,6 +88,6 @@ class User extends Authenticatable
             return url('storage/' . $this->image);
         }
 
-        return url('storage/profile/fake-profile.jpg');
+        return url('./fake-profile/fake-profile.jpg');
     }
 }

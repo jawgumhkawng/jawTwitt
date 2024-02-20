@@ -60,7 +60,7 @@
 
                     <a href="{{ route('login') }}" class="fw-light nav-link fs-6 mx-2">
                         <span class="fas fa-comment "></span>
-                        {{ $post->comments_count }}
+                        {{ $post->comments()->count() }}
                     </a>
                 </div>
                 <div>

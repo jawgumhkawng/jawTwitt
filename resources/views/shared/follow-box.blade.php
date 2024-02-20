@@ -9,7 +9,7 @@
             @foreach ($topUsers as $user)
                 <div class="hstack gap-2 mb-3">
                     <div class="avatar">
-                        <a href="{{ route('user.show', $user->id) }}"><img style="width: 35px"
+                        <a href="{{ route('user.show', $user->id) }}"><img style="width: 35px ; height: 35px"
                                 class="avatar-img rounded-circle" src="{{ $user->getImageURL() }}" alt="" /></a>
                     </div>
                     <div class="overflow-hidden">
@@ -20,6 +20,11 @@
                         <a class="btn btn-primary-soft rounded-circle icon-md ms-auto"
                             href="{{ route('user.show', $user->id) }}">
                             <i class="fa-solid text-success fa-user-group"></i>
+                        </a>
+                    @elseif(auth()->id() === $user->id)
+                        <a class="btn btn-primary-soft rounded-circle icon-md ms-auto"
+                            href="{{ route('user.show', $user->id) }}">
+                            <i class="fa-solid text-secondary fa-user"></i>
                         </a>
                     @else
                         <a class="btn btn-primary-soft rounded-circle icon-md ms-auto"
