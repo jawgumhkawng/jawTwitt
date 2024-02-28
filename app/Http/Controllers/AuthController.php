@@ -39,7 +39,7 @@ class AuthController extends Controller
 
         Mail::to($user->email)->send(new TwittEmail($user));
 
-        return redirect()->route('dashboard')->with("success", "Account Created successfully!");
+        return redirect()->route('dashboard')->with("success-register", "Account Created successfully! Continue To ");
     }
 
     public function login()

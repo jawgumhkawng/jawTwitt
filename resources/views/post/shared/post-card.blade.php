@@ -59,7 +59,7 @@
                     @include('post.shared.like-button')
 
                     <a href="{{ route('login') }}" class="fw-light nav-link fs-6 mx-2">
-                        <span class="fas fa-comment "></span>
+                        <span class="far fa-comment "></span>
                         {{ $post->comments()->count() }}
                     </a>
                 </div>

@@ -19,11 +19,13 @@
                     href="{{ route('terms') }}">
                     <span>{{ __('post.terms') }}</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Route::is('profile') ? 'text-white bg-primary rounded-1' : '' }}"
-                    href="{{ route('user.show', auth()->user()->id ?? '') }}">
-                    <span>{{ __('post.viewprofile') }}</span></a>
-            </li>
+            @auth
+                <li class="nav-item">
+                    <a class="nav-link {{ Route::is('profile') ? 'text-white bg-primary rounded-1' : '' }}"
+                        href="{{ route('user.show', auth()->user()->id ?? '') }}">
+                        <span>{{ __('post.viewprofile') }}</span></a>
+                </li>
+            @endauth
         </ul>
     </div>
     <div class="card-footer text-center py-2">
